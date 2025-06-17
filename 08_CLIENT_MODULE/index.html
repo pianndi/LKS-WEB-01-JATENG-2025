@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOMBSKUY</title>
+  <style>
+    .screen {
+      width: 1000px;
+      height: 600px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body style="min-height: 100vh;display: flex;align-items: center;justify-content: center;">
+  <div id="home_screen" class="screen"
+    style="display: flex;flex-direction: column;align-items: center;justify-content: center;">
+    <img src="./Images/logo.png" alt="">
+    <form id="myform" style="display: flex;flex-direction: column;align-items: center;">
+
+      <input required name="username" type="text" placeholder="Input usernmae">
+      <select required name="level" id="">
+        <option value="" selected disabled>Select level</option>
+        <option value="1">Easy</option>
+        <option value="2">Medium</option>
+        <option value="3">Hard</option>
+      </select>
+      <button>Play</button>
+      <button type="button" onclick="instruction.classList.toggle('hidden')">Instruction</button>
+    </form>
+    <div id="instruction" class="hidden">
+      <h1>How to play game <span onclick="instruction.classList.add('hidden')"
+          style="color: red;cursor: pointer;">X</span></h1>
+      <ol>
+        <li>Input Username</li>
+        <li>Put the bomb</li>
+        <li>Blow up as many walls as possible</li>
+        <li>Blow up enemies</li>
+        <li>Enjoy</li>
+      </ol>
+    </div>
+  </div>
+  <div class="screen" id="game_screen" style="position: relative;">
+    <canvas id="canvas"></canvas>
+    <div id="pause_popup" class="hidden"
+      style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);background: white;">
+      <h2>Game Paused</h2>
+      <button onclick="game.resume()">Continue</button>
+    </div>
+    <div id="over_popup" class="hidden"
+      style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);background: white;padding: 2rem;">
+      <h2>Game Over</h2>
+      <p>Good job <span id="overName"></span> your time <span id="overTimer"></span></p>
+      <span>
+        <img src="./Images/wall_crack.png" alt=""> = <span id="overBreaks"></span>
+      </span>
+      <span>
+        <img src="./Images/tnt.png" alt=""> = <span id="overTnt">0</span>
+      </span>
+      <span>
+        <img src="./Images/ice.png" alt=""> = <span id="overIce">0</span>
+      </span>
+      <button onclick="save_score()">Save Score</button>
+      <button onclick="leader_popup.classList.remove('hidden');over_popup.classList.add('hidden')">Leaderboards</button>
+    </div>
+    <div id="leader_popup" class="hidden"
+      style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);background: white;padding: 2rem;">
+      <h2>Leaderboards</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Player Name</th>
+            <th>Time</th>
+            <th><img src="./Images/wall_crack.png" alt=""></th>
+            <th><img src="./Images/tnt.png" alt=""></th>
+            <th><img src="./Images/ice.png" alt=""></th>
+          </tr>
+        </thead>
+        <tbody id="leaderboard">
+
+        </tbody>
+      </table>
+
+      <button onclick="game.restart()">Restart</button>
+      <button onclick="reset()">Reset</button>
+    </div>
+  </div>
+  <script src="./Items.js"></script>
+  <script src="./Dog.js"></script>
+  <script src="./Rect.js"></script>
+  <script src="./Explosion.js"></script>
+  <script src="./Bomb.js"></script>
+  <script src="./Wall.js"></script>
+  <script src="./Player.js"></script>
+  <script src="./vanilla.js"></script>
+</body>
+
+</html>
