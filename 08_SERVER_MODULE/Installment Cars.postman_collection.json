@@ -1,0 +1,1258 @@
+{
+	"info": {
+		"_postman_id": "8d9099c0-8a49-4066-a930-34f6a2a8514f",
+		"name": "Installment Cars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "A1a - Login success",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_card_number",
+									"value": "20210001",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1212112",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "A1b - Login failed",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_card_number",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1212112",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "A1c - Logout success",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_card_number",
+									"value": "20210001",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1212112",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "A1d - Logout failed",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_card_number",
+									"value": "20210001",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1212112",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Request Data Validation",
+			"item": [
+				{
+					"name": "A2a - Request validation success",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job",
+									"value": "SomeText",
+									"type": "text"
+								},
+								{
+									"key": "job_description",
+									"value": "SomeText",
+									"type": "text"
+								},
+								{
+									"key": "income",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "reason_accepted",
+									"value": "SomeText",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/validations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"validations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "A2b - Request validation invalid token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job",
+									"value": "SomeText",
+									"type": "text"
+								},
+								{
+									"key": "job_description",
+									"value": "SomeText",
+									"type": "text"
+								},
+								{
+									"key": "income",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "reason_accepted",
+									"value": "SomeText",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/validations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"validations"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Get the Validation",
+			"item": [
+				{
+					"name": "A2d - Get validation invalid token",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job",
+									"value": "SomeText",
+									"type": "text"
+								},
+								{
+									"key": "job_description",
+									"value": "SomeText",
+									"type": "text"
+								},
+								{
+									"key": "income",
+									"value": "SomeText",
+									"type": "text"
+								},
+								{
+									"key": "reason_accepted",
+									"value": "SomeText",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/validations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"validations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "A2c - Get validation success",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job",
+									"value": "SomeText",
+									"type": "text"
+								},
+								{
+									"key": "job_description",
+									"value": "SomeText",
+									"type": "text"
+								},
+								{
+									"key": "income",
+									"value": "SomeText",
+									"type": "text"
+								},
+								{
+									"key": "reason_accepted",
+									"value": "SomeText",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/validations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"validations"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Installment",
+			"item": [
+				{
+					"name": "A3a - Get all installment cars",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job",
+									"value": "SomeText",
+									"type": "text"
+								},
+								{
+									"key": "job_description",
+									"value": "SomeText",
+									"type": "text"
+								},
+								{
+									"key": "income",
+									"value": "SomeText",
+									"type": "text"
+								},
+								{
+									"key": "reason_accepted",
+									"value": "SomeText",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/installment_cars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"installment_cars"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "A3b - Get all installment cars invalid token",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job",
+									"value": "SomeText",
+									"type": "text"
+								},
+								{
+									"key": "job_description",
+									"value": "SomeText",
+									"type": "text"
+								},
+								{
+									"key": "income",
+									"value": "SomeText",
+									"type": "text"
+								},
+								{
+									"key": "reason_accepted",
+									"value": "SomeText",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/installment_cars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"installment_cars"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Installment Detail",
+			"item": [
+				{
+					"name": "A3d - Get detail installment invalid_token",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job",
+									"value": "SomeText",
+									"type": "text"
+								},
+								{
+									"key": "job_description",
+									"value": "SomeText",
+									"type": "text"
+								},
+								{
+									"key": "income",
+									"value": "SomeText",
+									"type": "text"
+								},
+								{
+									"key": "reason_accepted",
+									"value": "SomeText",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/installment_cars/16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"installment_cars",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "A3c - Get detail installment cars",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job",
+									"value": "SomeText",
+									"type": "text"
+								},
+								{
+									"key": "job_description",
+									"value": "SomeText",
+									"type": "text"
+								},
+								{
+									"key": "income",
+									"value": "SomeText",
+									"type": "text"
+								},
+								{
+									"key": "reason_accepted",
+									"value": "SomeText",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/installment_cars/16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"installment_cars",
+								"16"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Applying for installment",
+			"item": [
+				{
+					"name": "A4a - Applying for installment success",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job",
+									"value": "SomeText",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "job_description",
+									"value": "SomeText",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "instalment_id",
+									"value": "16",
+									"type": "text"
+								},
+								{
+									"key": "months",
+									"value": "47",
+									"type": "text"
+								},
+								{
+									"key": "notes",
+									"value": "SomeText",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/applications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"applications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "A4b - Applying for installment invalid token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job",
+									"value": "SomeText",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "job_description",
+									"value": "SomeText",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "instalment_id",
+									"value": "16",
+									"type": "text"
+								},
+								{
+									"key": "months",
+									"value": "47",
+									"type": "text"
+								},
+								{
+									"key": "notes",
+									"value": "SomeText",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/applications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"applications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "A4c - if the society hasn't accepted by the validator",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job",
+									"value": "SomeText",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "job_description",
+									"value": "SomeText",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "instalment_id",
+									"value": "16",
+									"type": "text"
+								},
+								{
+									"key": "months",
+									"value": "47",
+									"type": "text"
+								},
+								{
+									"key": "notes",
+									"value": "SomeText",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/applications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"applications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "A4d - Invalid field",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job",
+									"value": "SomeText",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "job_description",
+									"value": "SomeText",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "instalment_id",
+									"value": "16",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "months",
+									"value": "47",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "notes",
+									"value": "SomeText",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/applications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"applications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "A4e - if 2nd apply",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job",
+									"value": "SomeText",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "job_description",
+									"value": "SomeText",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "instalment_id",
+									"value": "16",
+									"type": "text"
+								},
+								{
+									"key": "months",
+									"value": "47",
+									"type": "text"
+								},
+								{
+									"key": "notes",
+									"value": "SomeText",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/applications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"applications"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8065c292-ca31-48e4-9bdb-a456aa6f0667",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f06b118d-8444-4215-8859-303858551449",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Get all installment applications",
+			"item": [
+				{
+					"name": "A4f - Get all installment applications success",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job",
+									"value": "SomeText",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "job_description",
+									"value": "SomeText",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "instalment_id",
+									"value": "16",
+									"type": "text"
+								},
+								{
+									"key": "months",
+									"value": "47",
+									"type": "text"
+								},
+								{
+									"key": "notes",
+									"value": "SomeText",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/applications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"applications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "A4f - Get all installment applications success Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job",
+									"value": "SomeText",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "job_description",
+									"value": "SomeText",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "instalment_id",
+									"value": "16",
+									"type": "text"
+								},
+								{
+									"key": "months",
+									"value": "47",
+									"type": "text"
+								},
+								{
+									"key": "notes",
+									"value": "SomeText",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/applications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"applications"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "Bearer {{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "64ad49a9-7109-403f-a548-50af0a3a9cdc",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d44a5c99-bf11-4230-8e93-7345ceab86b6",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "6c040e6a-642a-481c-a78a-50ff8207d654",
+			"key": "token",
+			"value": ""
+		}
+	],
+	"protocolProfileBehavior": {}
+}
